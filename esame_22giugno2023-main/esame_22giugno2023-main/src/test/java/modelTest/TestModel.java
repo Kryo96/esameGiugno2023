@@ -19,7 +19,7 @@ public class TestModel {
 
         sut.addToListaIncidenti("A4,15,incidente");
 
-        assertThat(sut.getIncidentiAperti().get(0).toString()).isEqualTo("incidente sulla A4 al km 15");
+        assertThat(sut.getIncidentiAperti().get(0).toString()).isEqualTo("incidente sulla A4 al Km 15");
     }
 
     @Test
@@ -41,8 +41,8 @@ public class TestModel {
         sut.chiudiSegnalazione("A4,15");
         assertThat(sut.getIncidentiAperti().size()).isEqualTo(1);
         assertThat(sut.getIncidentiChiusi().size()).isEqualTo(1);
-        assertThat(sut.getIncidentiAperti().get(0).toString()).isEqualTo("coda sulla A4 al km 22");
-        assertThat(sut.getIncidentiChiusi().get(0).toString()).isEqualTo("Incidente sulla A4 al km 15");
+        assertThat(sut.getIncidentiAperti().get(0).toString()).isEqualTo("coda sulla A4 al Km 22");
+        assertThat(sut.getIncidentiChiusi().get(0).toString()).isEqualTo("Incidente sulla A4 al Km 15");
 
     }
 

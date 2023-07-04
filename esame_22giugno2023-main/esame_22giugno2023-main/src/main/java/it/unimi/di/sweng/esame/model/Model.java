@@ -3,6 +3,7 @@ package it.unimi.di.sweng.esame.model;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Model implements Observable{
 
@@ -10,9 +11,12 @@ public class Model implements Observable{
     // Rendere struttura dati riordinabile
     // reference escaping
 
-    private List<Incidenti> listaIncidenti = new ArrayList<>();
-    private List<Incidenti> listaChiusi = new ArrayList<>();
+    private CopyOnWriteArrayList<Incidenti> listaIncidenti = new CopyOnWriteArrayList<>();
+    private CopyOnWriteArrayList<Incidenti> listaChiusi = new CopyOnWriteArrayList<>();
     private List<Observer> observers = new ArrayList<>();
+
+    public Model(){
+    }
 
     public int addToListaIncidenti(String data){
         if(listaIncidenti.size() < 8) {

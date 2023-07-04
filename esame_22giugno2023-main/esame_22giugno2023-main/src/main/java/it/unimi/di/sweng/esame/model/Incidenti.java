@@ -49,7 +49,7 @@ public final class Incidenti implements Comparable<Incidenti> {
 
     @Override
     public String toString() {
-        return this.motivazione + " sulla "  + this.id + " al km " + this.km;
+        return this.motivazione + " sulla "  + this.id + " al Km " + this.km;
     }
 
 }

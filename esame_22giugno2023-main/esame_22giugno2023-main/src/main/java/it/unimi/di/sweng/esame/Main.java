@@ -3,6 +3,7 @@ package it.unimi.di.sweng.esame;
 
 
 import it.unimi.di.sweng.esame.model.Model;
+import it.unimi.di.sweng.esame.presenters.DisplayPresenter;
 import it.unimi.di.sweng.esame.presenters.InputPresenter;
 import it.unimi.di.sweng.esame.presenters.Presenter;
 import it.unimi.di.sweng.esame.views.CentralStationView;
@@ -46,7 +47,7 @@ public class Main extends Application {
     //TODO creare presenters e connettere model e view
     Model model = new Model();
     InputPresenter inputPresenter = new InputPresenter(model, stationView);
-    
+    DisplayPresenter displayPresenter = new DisplayPresenter(model, leftSideView, rightSideView);
 
     // HINT: per aggiornare lo stato delle viste all'inizio
     model.notifyObservers();

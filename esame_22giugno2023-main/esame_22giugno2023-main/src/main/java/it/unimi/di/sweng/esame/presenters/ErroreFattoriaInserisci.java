@@ -6,10 +6,8 @@ public class ErroreFattoriaInserisci {
 
 
     Errore build (@NotNull String data){
-        if(data.equals("-1"))
-            return new ListaPienaErrore();
-        else if (!(data.split(",").length == 3 )) {
-            return  new DescrizioneErrore(); 
+      if (data.split(",").length < 3 ) {
+            return  new DescrizioneErrore();
         } else if (isNotANumber(data.split(",")[1])) {
             return new CampoNumericoErrore();
         }else{

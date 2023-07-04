@@ -7,8 +7,6 @@ public class ErroreFattoriaChiusi {
 
         if (isNotANumber(data.split(",")[1])){
             return new CampoNumericoErrore();
-        }else if(data.equals("-3")){
-           return new SegnalazioneNonPresenteErrore();
         }else{
             return new NessunErrore();
         }
