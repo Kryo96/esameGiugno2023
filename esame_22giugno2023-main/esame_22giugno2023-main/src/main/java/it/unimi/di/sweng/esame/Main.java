@@ -2,6 +2,9 @@ package it.unimi.di.sweng.esame;
 
 
 
+import it.unimi.di.sweng.esame.model.Model;
+import it.unimi.di.sweng.esame.presenters.InputPresenter;
+import it.unimi.di.sweng.esame.presenters.Presenter;
 import it.unimi.di.sweng.esame.views.CentralStationView;
 import it.unimi.di.sweng.esame.views.DisplayView;
 import javafx.application.Application;
@@ -41,9 +44,12 @@ public class Main extends Application {
     gridPane.add(rightSideView, 1, 1);
 
     //TODO creare presenters e connettere model e view
+    Model model = new Model();
+    InputPresenter inputPresenter = new InputPresenter(model, stationView);
+    
 
     // HINT: per aggiornare lo stato delle viste all'inizio
-    // model.notifyObservers();
+    model.notifyObservers();
 
     Scene scene = new Scene(gridPane);
     primaryStage.setScene(scene);

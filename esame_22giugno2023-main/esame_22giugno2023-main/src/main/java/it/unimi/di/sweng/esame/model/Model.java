@@ -14,23 +14,36 @@ public class Model implements Observable{
     private List<Incidenti> listaChiusi = new ArrayList<>();
     private List<Observer> observers = new ArrayList<>();
 
-    public String addToListaIncidenti(String data){
-        if(listaIncidenti.size() < 8){
-            return "pieno";
-        }else if("altra condizione"){
-
-        }else {
+    public int addToListaIncidenti(String data){
+        if(listaIncidenti.size() < 8) {
             String[] tmp = data.split(",");
             Incidenti incidente = new Incidenti(tmp[0], Integer.parseInt(tmp[1]), tmp[2]);
-            listaIncidenti.add(incidente);
-            notifyObservers();
-            return "";
+
+            if(!listaIncidenti.contains(incidente)){
+                listaIncidenti.add(incidente);
+                notifyObservers();
+            }else{
+                return -2;
+            }
+        }else{
+            return -1;
         }
+        return 0;
     }
 
-    public String chiudiSegnalazione(String data){
-
-        return "";
+    public int chiudiSegnalazione(String data){
+        boolean checkCampi = false;
+        for (Incidenti s: listaIncidenti) {
+            if(s.id().equals(data.split(",")[0]) && s.km() == Integer.parseInt(data.split(",")[1])){
+                checkCampi = true;
+                listaChiusi.add(s);
+                listaIncidenti.remove(s);
+                notifyObservers();
+            }
+        }
+        if(!checkCampi)
+            return -3;
+        return 0;
     }
 
     @Override

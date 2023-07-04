@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="modelTest.TestModel" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-01T15:41:43" hostname="DESKTOP-KHTJKKL" time="0.056">
+<testsuite name="modelTest.TestModel" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-07-04T12:44:58" hostname="marco-96" time="0.576">
   <properties/>
-  <testcase name="testAddrecord()" classname="modelTest.TestModel" time="0.056"/>
+  <testcase name="testAddDoppio()" classname="modelTest.TestModel" time="0.027"/>
+  <testcase name="testRimuovi()" classname="modelTest.TestModel" time="0.007"/>
+  <testcase name="testAddrecord()" classname="modelTest.TestModel" time="0.001"/>
+  <testcase name="testNotify()" classname="modelTest.TestModel" time="0.54"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
